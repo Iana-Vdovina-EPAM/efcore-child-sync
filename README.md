@@ -1,18 +1,18 @@
 # efcore-child-sync
 
 ## Summary
-This repository is an example of child entity syncronization differencies in two different Entity Framework Core versions: 2.2.0 and 3.1.5.
+This repository is an example of a child entity synchronization differences in two different Entity Framework Core versions: 2.2.0 and 3.1.5.
 
 ## Details
-We have Entity - parent class and Child - child class. 
+We have an Entity - parent class and Child - child class. 
 One Entity stores one Child.
-Entity has properties: 
+The entity has properties: 
 1. Id - unique identifier
 2. Description - any string value
 3. Child - full child entity
 4. ChildCode - unique child identifier.
 
-Child has properties:
+The child has properties:
 1. ChildCode - unique identifier
 2. Description - any string value
 
@@ -25,8 +25,8 @@ Child has properties:
 
 EF Core 2.2 behavior
 Entity2.ChildCode stores "ChildCode-Original" value and Entity2.Child = Entity1.Child.
-Child and ChildCode are syncrinized based on *ChildCode* value.
+Child and ChildCode are synchronized based on *ChildCode* value.
 
 EF Core 3.1 behavior
 Entity2.ChildCode stores "ChildCode-Changed" and Entity2.Child != Entity1.Child.
-Child and ChildCode are syncrinized based on *Child* value.
+Child and ChildCode are synchronized based on *Child* value.
