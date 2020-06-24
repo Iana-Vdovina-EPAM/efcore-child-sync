@@ -42,20 +42,13 @@ namespace EfDemo
 
             /////////////////////////
             changed.ChildCode = original.ChildCode;
-            changed.Description = original.Description;
             /////////////////////////
 
-            original.Description = "i'm changed";
-
-            context.Entities.UpdateRange(new[] { original });
             context.Entities.AddRange(new[] { changed });
-
 
             context.SaveChanges();
 
             Console.WriteLine($"EF Core 2.2");
-            Console.WriteLine($"Codes - {string.Join(",", context.Entities.Select(e => e.ChildCode))}");
-            Console.WriteLine($"ChildrenCodes - {string.Join(",", context.Entities.Select(e => e.Child.Code))}");
 
             var entity1 = context.Entities.Single(e => e.Id == 1);
             var entity2 = context.Entities.Single(e => e.Id == 2);
